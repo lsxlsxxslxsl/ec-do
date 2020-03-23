@@ -5,21 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-<script src="../src/ec-do-3.0.0-beta.1.js"></script>
+<!--beta1版本-->
+<!--<script src="../src/ec-do-3.0.0-beta.2.js"></script>-->
+<!--<script>-->
+    <!--console.log(ecDo.checkType.check('185226236', 'mobile'))-->
+    <!--ecDo.checkType.addRule('password', function (str) {-->
+        <!--return /^[-a-zA-Z0-9._]+$/.test(str);-->
+    <!--})-->
+    <!--console.log(ecDo.checkType.check('asdasd654zxc', 'password'))-->
+<!--</script>-->
+<!--beta2版本-->
+<script src="../src/ec-do-3.0.0-beta.2.js"></script>
 <script>
-    ecDo.checkType.check('18522622636', 'mobile').then(info => {
-        console.log(info)
-    }).catch(err => {
-        console.log(err)
-    });
-    ecDo.checkType.addRule('password', function (str) {
+    console.log(ecDo.checkType('185226236', 'mobile'))
+    ecDo.extend.checkType('password', function (str) {
         return /^[-a-zA-Z0-9._]+$/.test(str);
     })
-    ecDo.checkType.check('asdasd654zxc', 'password').then(info => {
-        console.log(info)
-    }).catch(err => {
-        console.log(err)
-    });
+    console.log(ecDo.checkType('asdasd654zxc', 'password'))
 </script>
 </body>
 </html>
